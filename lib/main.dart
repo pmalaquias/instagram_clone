@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/Home.dart';
 import 'package:instagram_clone/dashboard.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class Insta extends StatelessWidget {
         primaryColor: Colors.grey,
         primarySwatch: Colors.grey,
       ),
-      home: Dashboard(title: 'Instagram'),
+      home:Home(),
     );
   }
 }

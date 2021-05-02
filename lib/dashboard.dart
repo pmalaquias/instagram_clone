@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Dashboard extends StatefulWidget {
   Dashboard({Key key, this.title}) : super(key: key);
@@ -12,6 +13,14 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
 
+  List _pages = [
+    Text("Home"),
+    Text("Order"),
+    Text("Notfication"),
+    Text("More"),
+    Text("Profile"),
+  ];
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -22,13 +31,16 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
-        actions: [IconButton(icon: Icon(Icons.chat), onPressed: () {})],
+        title: Text(
+          widget.title,
+          style: GoogleFonts.yellowtail(fontSize: 32),
+        ),
+        actions: [
+          IconButton(icon: Icon(Icons.chat), onPressed: () {}),
+        ],
       ),
-      body: Container(
-        //color: Colors.amberAccent,
-      ),
-      bottomNavigationBar: Container(
+      body: Center(child: _pages[_selectedIndex]),
+      /*bottomNavigationBar: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(30),
@@ -48,7 +60,7 @@ class _DashboardState extends State<Dashboard> {
             topRight: Radius.circular(30.0),
           ),
           child: BottomNavigationBar(
-            items: <BottomNavigationBarItem>[
+            items: [
               BottomNavigationBarItem(
                 icon: Icon(Icons.home_filled),
                 label: 'Home',
@@ -58,7 +70,10 @@ class _DashboardState extends State<Dashboard> {
                 label: 'Search',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.add_circle, size: 28,),
+                icon: Icon(
+                  Icons.add_circle,
+                  size: 28,
+                ),
                 label: 'add',
               ),
               BottomNavigationBarItem(
@@ -79,7 +94,7 @@ class _DashboardState extends State<Dashboard> {
             showUnselectedLabels: false,
           ),
         ),
-      ),
+      ),*/
     );
   }
 }
