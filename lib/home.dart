@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/dashboard.dart';
+import 'package:instagram_clone/favorites.dart';
 import 'package:instagram_clone/profile.dart';
+import 'package:instagram_clone/search.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -24,9 +26,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   final List<Widget> screens = [
     Dashboard(title: 'Instagram'),
+    Search(),
     Dashboard(title: 'Instagram'),
-    Dashboard(title: 'Instagram'),
-    Dashboard(title: 'Instagram'),
+    Favorites(),
     ProfileScreen()
   ]; //listas de paginas
 
