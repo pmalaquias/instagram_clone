@@ -55,8 +55,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
-            topRight: Radius.circular(30),
-            topLeft: Radius.circular(30),
+            topRight: Radius.circular(24),
+            topLeft: Radius.circular(24),
           ),
           boxShadow: [
             BoxShadow(
@@ -68,8 +68,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30.0),
-            topRight: Radius.circular(30.0),
+            topLeft: Radius.circular(16.0),
+            topRight: Radius.circular(16.0),
           ),
           child: BottomAppBar(
             elevation: 20.0,
