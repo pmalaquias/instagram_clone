@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:instagram_clone/Post.dart';
+import 'package:instagram_clone/PostCard.dart';
 
 class Dashboard extends StatefulWidget {
   Dashboard({Key key, this.title}) : super(key: key);
@@ -27,18 +27,18 @@ class _DashboardState extends State<Dashboard> {
       body: Container(
         child: ListView(
           children: [
-            Post(),
-            Post(),
-            Post(),
-            Post(),
-            Post(),
-            Post(),
-            Post(),
-            Post(),
-            Post(),
-            Post(),
-            Post(),
-            Post(),
+            PostCard(),
+            PostCard(),
+            PostCard(),
+            PostCard(),
+            PostCard(),
+            PostCard(),
+            PostCard(),
+            PostCard(),
+            PostCard(),
+            PostCard(),
+            PostCard(),
+            PostCard(),
           ],
         ),
       ),
