@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:instagram_clone/Post.dart';
 
 class Dashboard extends StatefulWidget {
   Dashboard({Key key, this.title}) : super(key: key);
@@ -11,7 +12,6 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,8 +24,24 @@ class _DashboardState extends State<Dashboard> {
           IconButton(icon: Icon(Icons.chat), onPressed: () {}),
         ],
       ),
-      body: Center(),
-
+      body: Container(
+        child: ListView(
+          children: [
+            Post(),
+            Post(),
+            Post(),
+            Post(),
+            Post(),
+            Post(),
+            Post(),
+            Post(),
+            Post(),
+            Post(),
+            Post(),
+            Post(),
+          ],
+        ),
+      ),
     );
   }
 }
