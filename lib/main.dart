@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/Home.dart';
+import 'package:instagram_clone/home.dart';
 import 'package:instagram_clone/dashboard.dart';
 
 void main() {
