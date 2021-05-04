@@ -2,21 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:instagram_clone/Post.dart';
 
- // img1 ='https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584_1280.png'
+// img1 ='https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584_1280.png'
 
-class PostCard extends StatelessWidget {
-
+class PostCard extends StatefulWidget {
   Post post = Post();
 
   PostCard({this.post});
 
+  @override
+  _PostCardState createState() => _PostCardState();
+}
+
+class _PostCardState extends State<PostCard> {
   Image img = Image.network(
       'https://cdn.pixabay.com/photo/2021/01/17/02/02/planets-5923806_1280.jpg');
 
+  Icon iconLike = Icon(Icons.favorite_border);
+
   @override
   Widget build(BuildContext context) {
-
-    print(post);
+    print(widget.post);
 
     return Card(
       child: Padding(
@@ -26,33 +31,51 @@ class PostCard extends StatelessWidget {
           children: [
             Row(
               children: [
-               Container(
-                 height: 30,
-                 width: 30,
-                 decoration: BoxDecoration(
-                   shape: BoxShape.circle,
-                   image: DecorationImage(
-                     image: NetworkImage(post.imgUser),
-                     fit: BoxFit.cover,
-                   ),
-                 ),
-               ),
-                SizedBox(width: 8,),
-                Text('${post.nameUser}')
+                Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage(widget.post.imgUser),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                Text('${widget.post.nameUser}')
               ],
             ),
-            SizedBox(height: 8,),
+            SizedBox(
+              height: 8,
+            ),
             Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20)
-              ),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
               child: Image.network(
-                post.imgPost,
+                widget.post.imgPost,
               ),
             ),
             Row(
               children: [
-                IconButton(icon: Icon(Icons.favorite_border), onPressed: () {}),
+                IconButton(
+                    icon: iconLike,
+                    onPressed: () {
+                      setState(() {
+                        if (iconLike.icon == Icons.favorite_border) {
+                          iconLike = Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                          );
+                          widget.post.likes++;
+                        } else {
+                          iconLike = Icon(Icons.favorite_border);
+                          widget.post.likes--;
+                        }
+                      });
+                    }),
                 IconButton(icon: Icon(Icons.comment_rounded), onPressed: () {}),
                 IconButton(icon: Icon(Icons.send_rounded), onPressed: () {}),
               ],
@@ -63,7 +86,10 @@ class PostCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text('Cometários', style: TextStyle(fontWeight: FontWeight.bold),),
+                  Text(
+                    'Cometários',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ],
               ),
             ),
@@ -72,6 +98,4 @@ class PostCard extends StatelessWidget {
       ),
     );
   }
-
-
 }
