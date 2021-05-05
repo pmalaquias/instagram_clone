@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/PostCard.dart';
 import 'package:instagram_clone/home.dart';
 import 'package:instagram_clone/dashboard.dart';
+import 'package:instagram_clone/share_post.dart';
 
 void main() {
   runApp(Insta());
@@ -18,6 +19,7 @@ class Insta extends StatelessWidget {
         primarySwatch: Colors.grey,
       ),
       home: Home(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

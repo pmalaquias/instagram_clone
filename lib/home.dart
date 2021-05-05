@@ -6,6 +6,7 @@ import 'package:instagram_clone/dashboard.dart';
 import 'package:instagram_clone/favorites.dart';
 import 'package:instagram_clone/profile.dart';
 import 'package:instagram_clone/search.dart';
+import 'package:instagram_clone/share_post.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -35,7 +36,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   final List<Widget> screens = [
     Dashboard(title: 'Instagram'),
     Search(),
-    Container(),
+    SharePost(),
     Favorites(),
     ProfileScreen()
   ]; //listas de paginas
@@ -111,6 +112,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           setState(() {
             if (pikedFile != null) {
               _image = File(pikedFile.path);
+
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => SharePost(path: _image,)),
+              );
             } else {
               print('No image selected.');
             }
