@@ -51,11 +51,32 @@ class _PostCardState extends State<PostCard> {
             SizedBox(
               height: 8,
             ),
-            Container(
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
-              child: Image.network(
-                widget.post.imgPost,
+            Material(
+              child: InkWell(
+                splashColor: Colors.blueGrey,
+                onTap: (){print("click");},
+                onDoubleTap: (){
+
+                  setState(() {
+                    if (iconLike.icon == Icons.favorite_border) {
+                      iconLike = Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                      );
+                      widget.post.likes++;
+                    } else {
+                      iconLike = Icon(Icons.favorite_border);
+                      widget.post.likes--;
+                    }
+                  });
+                },
+                child: Container(
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                  child: Image.network(
+                    widget.post.imgPost,
+                  ),
+                ),
               ),
             ),
             Row(

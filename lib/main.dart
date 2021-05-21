@@ -3,6 +3,7 @@ import 'package:instagram_clone/PostCard.dart';
 import 'package:instagram_clone/home.dart';
 import 'package:instagram_clone/dashboard.dart';
 import 'package:instagram_clone/share_post.dart';
+import 'package:instagram_clone/test.dart';
 
 void main() {
   runApp(Insta());

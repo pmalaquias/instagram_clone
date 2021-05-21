@@ -113,9 +113,13 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             if (pikedFile != null) {
               _image = File(pikedFile.path);
 
-              Navigator.pushReplacement(
+              Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SharePost(path: _image,)),
+                MaterialPageRoute(
+                  builder: (context) => SharePost(
+                    path: _image,
+                  ),
+                ),
               );
             } else {
               print('No image selected.');
@@ -123,7 +127,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           });
 
           setState(() {
-            currentTab = index;
+            currentTab = 0;
+
           });
         },
         child: Column(

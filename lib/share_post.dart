@@ -49,7 +49,9 @@ class _SharePostState extends State<SharePost> {
             SizedBox(
               width: double.maxFinite,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 child: Text(
                   'Salvar',
                   style: TextStyle(color: Colors.white),
