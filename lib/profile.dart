@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/user.dart';
+import 'package:glassmorphism/glassmorphism.dart';
 
 var user = User('Gandalf the Grey',
     'https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Gandalf600ppx.jpg/255px-Gandalf600ppx.jpg');
@@ -175,7 +176,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Drawer myDrawer() {
     return Drawer(
-      child: Container(
+      child: GlassmorphicContainer(
+        width: 800,
+        height: 100,
+        borderRadius: 0,
+        blur: 10,
+        alignment: Alignment.bottomCenter,
+        border: 1,
+        linearGradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFFffffff).withOpacity(0.01),
+              Color(0xFF333333).withOpacity(0.05),
+            ],
+            stops: [
+              0.1,1
+            ]),
+        borderGradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color(0xFFffffff).withOpacity(0.5),
+            Color((0xFFFFFFFF)).withOpacity(0.5),
+          ],
+        ),
         child: ListView(
           children: [
             ListTile(
