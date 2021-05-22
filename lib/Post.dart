@@ -1,42 +1,52 @@
 import 'package:flutter/material.dart';
 
-
 const String urlPhoto =
     'https://cdn.pixabay.com/photo/2020/04/20/20/47/drip-5069808_1280.jpg';
 
-class Post{
+class Post {
+  String imgUser =
+      'https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916__480.png';
 
-   String _imgUser = 'https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916__480.png';
+  String get getImgUser => imgUser;
 
-  String get imgUser => _imgUser;
-
-  set imgUser(String imgUser) {
-    _imgUser = imgUser;
+  set setImgUser(String imgUser) {
+    this.imgUser = imgUser;
   }
-  String _nameUser = 'Your name';
 
-  String get nameUser => _nameUser;
+  String nameUser = 'Your name';
 
-  set nameUser(String nameUser) {
-    _nameUser = nameUser;
+  String get getNameUser => nameUser;
+
+  set setNameUser(String nameUser) {
+    this.nameUser = nameUser;
   }
-   String _imgPost = 'https://cdn.pixabay.com/photo/2020/04/20/20/47/drip-5069808_1280.jpg';
 
-  String get imgPost => _imgPost;
+  String imgPost =
+      'https://cdn.pixabay.com/photo/2020/04/20/20/47/drip-5069808_1280.jpg';
 
-  set imgPost(String imgPost) {
-    _imgPost = imgPost;
+  String get getImgPost => imgPost;
+
+  set setImgPost(String imgPost) {
+    this.imgPost = imgPost;
   }
-  int _likes = 0;
 
-  int get likes => _likes;
+  int likes = 0;
 
-  set likes(int likes) {
-    _likes = likes;
+  int get getLikes => likes;
+
+  set setLikes(int likes) {
+    likes++;
   }
 
   @override
   String toString() {
-    return 'Post{imgUser: $imgUser, nameUser: $nameUser, imgPost: $imgPost, likes: $likes}';
+    return 'Post{imgUser: $imgUser, nameUser: $nameUser, imgPost: $imgPost, likes: $getLikes}';
   }
+
+  Post({
+    this.imgUser,
+    this.nameUser,
+    this.imgPost,
+    this.likes,
+  });
 }

@@ -74,7 +74,7 @@ class _PostCardState extends State<PostCard> {
                   decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(20)),
                   child: Image.network(
-                    widget.post.imgPost,
+                    widget.post.getImgPost,
                   ),
                 ),
               ),
