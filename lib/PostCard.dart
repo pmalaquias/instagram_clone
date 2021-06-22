@@ -54,9 +54,10 @@ class _PostCardState extends State<PostCard> {
             Material(
               child: InkWell(
                 splashColor: Colors.blueGrey,
-                onTap: (){print("click");},
-                onDoubleTap: (){
-
+                onTap: () {
+                  print("click");
+                },
+                onDoubleTap: () {
                   setState(() {
                     if (iconLike.icon == Icons.favorite_border) {
                       iconLike = Icon(
@@ -71,10 +72,12 @@ class _PostCardState extends State<PostCard> {
                   });
                 },
                 child: Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                  child: Image.network(
-                    widget.post.getImgPost,
+                  
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.network(
+                      widget.post.getImgPost,
+                    ),
                   ),
                 ),
               ),

@@ -80,8 +80,6 @@ class _DashboardState extends State<Dashboard> {
             'https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Gandalf600ppx.jpg/255px-Gandalf600ppx.jpg',
         imgPost:
             'https://cdn.pixabay.com/photo/2020/11/19/20/04/puffin-5759684__480.jpg'),
-
-    /// aqui
     Post(
         nameUser: 'Gandalf the Grey',
         imgUser:
@@ -152,25 +150,7 @@ class _DashboardState extends State<Dashboard> {
                 ))
             .toList(),
       )
-          /*ListView(
-          children: [
-            PostCard(
-              post: post1,
-            ),
-            PostCard(
-              post: post2,
-            ),
-            PostCard(
-              post: post3,
-            ),
-            PostCard(
-              post: post4,
-            ),
-            PostCard(
-              post: post5,
-            ),
-          ],
-        ),*/
+
           ),
     );
   }

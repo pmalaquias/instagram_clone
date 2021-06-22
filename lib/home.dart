@@ -54,77 +54,81 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         bucket: bucket,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(24),
-            topLeft: Radius.circular(24),
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black38,
-              spreadRadius: 0,
-              blurRadius: 10,
-            ),
-          ],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(16.0),
-            topRight: Radius.circular(16.0),
-          ),
-          child: BottomAppBar(
-            elevation: 20.0,
-            //shape: const CircularNotchedRectangle(),
-            child: Container(
-              height: 60.0,
-              child: GlassmorphicContainer(
-                width: 350,
-                height: 750,
-                borderRadius: 0,
-                blur: 30,
-                alignment: Alignment.bottomCenter,
-                border: 0,
-                linearGradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFFffffff).withOpacity(0.1),
-                      Color(0xFFFFFFFF).withOpacity(0.05),
-                    ],
-                    stops: [
-                      0.1,
-                      1,
-                    ]),
-                borderGradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Color(0xFFffffff).withOpacity(0.5),
-                    Color((0xFFFFFFFF)).withOpacity(0.5),
-                  ],
-                ),
+      bottomNavigationBar: navigatorBarApp(context),
+    );
+  }
 
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    itemPage(context, 0, Icons.home_filled, Icons.home_filled,
-                        'Home', screens[0]),
-                    itemPage(context, 1, Icons.search, Icons.search_outlined,
-                        'Pesquisar', screens[1]),
-                    itemPage(context, 2, Icons.add_circle,
-                        Icons.add_circle_outline, 'Câmera', screens[2]),
-                    itemPage(context, 3, Icons.favorite, Icons.favorite_border,
-                        'Perfil', screens[3]),
-                    itemPage(context, 4, Icons.person, Icons.person_outline,
-                        'Perfil', screens[4]),
+  Widget navigatorBarApp(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(24),
+          topLeft: Radius.circular(24),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black38,
+            spreadRadius: 0,
+            blurRadius: 10,
+          ),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(16.0),
+          topRight: Radius.circular(16.0),
+        ),
+        child: BottomAppBar(
+          elevation: 0.0,
+          //shape: const CircularNotchedRectangle(),
+          child: Container(
+            height: 60.0,
+            child: GlassmorphicContainer(
+              width: 350,
+              height: 750,
+              borderRadius: 0,
+              blur: 30,
+              alignment: Alignment.bottomCenter,
+              border: 0,
+              linearGradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color(0xFFffffff).withOpacity(0.1),
+                    Color(0xFFFFFFFF).withOpacity(0.05),
                   ],
-                ),
+                  stops: [
+                    0.1,
+                    1,
+                  ]),
+              borderGradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color(0xFFffffff).withOpacity(0.5),
+                  Color((0xFFFFFFFF)).withOpacity(0.5),
+                ],
+              ),
+
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  itemPage(context, 0, Icons.home_filled, Icons.home_filled,
+                      'Home', screens[0]),
+                  itemPage(context, 1, Icons.search, Icons.search_outlined,
+                      'Pesquisar', screens[1]),
+                  itemPage(context, 2, Icons.add_circle,
+                      Icons.add_circle_outline, 'Câmera', screens[2]),
+                  itemPage(context, 3, Icons.favorite, Icons.favorite_border,
+                      'Perfil', screens[3]),
+                  itemPage(context, 4, Icons.person, Icons.person_outline,
+                      'Perfil', screens[4]),
+                ],
               ),
             ),
-            color: Colors.white,
           ),
+          color: Colors.white.withOpacity(0.5),
         ),
       ),
     );

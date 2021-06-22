@@ -76,7 +76,7 @@ List<Post> postList = [
       imgUser:
           'https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Gandalf600ppx.jpg/255px-Gandalf600ppx.jpg',
       imgPost:
-          'https://cdn.pixabay.com/photo/2021/04/17/06/57/colour-6185159__480.jpg'),
+          'https://cdn.pixabay.com/photo/2021/06/17/04/42/man-6342665_960_720.jpg'),
   Post(
       nameUser: 'Gandalf the Grey',
       imgUser:
@@ -173,14 +173,39 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           padding: EdgeInsets.zero,
                           crossAxisCount: 3,
                           children: postList
-                              .map((e) => Padding(
-                                    padding: const EdgeInsets.all(1.0),
-                                    child: Image.network(
-                                      e.imgPost,
-                                      height: 150,
-                                      width: 150,
+                              .map(
+                                (e) => InkWell(
+                                  onDoubleTap: () {
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) => SimpleDialog(
+                                              children: [
+                                                PostCard(
+                                                  post: Post(
+                                                      nameUser:
+                                                          'Gandalf the Grey',
+                                                      imgUser:
+                                                          'https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Gandalf600ppx.jpg/255px-Gandalf600ppx.jpg',
+                                                      imgPost:
+                                                          'https://cdn.pixabay.com/photo/2020/01/21/16/26/yorkshire-terrier-4783327__480.jpg'),
+                                                )
+                                              ],
+                                            ));
+                                  },
+                                  child: Container(
+                                    padding: EdgeInsets.all(3),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(5),
+                                      child: Image.network(
+                                        e.imgPost,
+                                        height: 150,
+                                        width: 150,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
-                                  ))
+                                  ),
+                                ),
+                              )
                               .toList()
                           /*Colors.primaries.map((color) {
                           return Container(color: color, height: 150.0);
@@ -248,7 +273,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    postList.length != 0? '${postList.length}': 0 ,
+                    postList.length != 0 ? '${postList.length}' : '0',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,

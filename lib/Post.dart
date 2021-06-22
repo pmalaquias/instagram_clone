@@ -30,17 +30,11 @@ class Post {
     this.imgPost = imgPost;
   }
 
-  int likes = 0;
-
-  int get getLikes => likes;
-
-  set setLikes(int likes) {
-    likes++;
-  }
+   int likes = 0;
 
   @override
   String toString() {
-    return 'Post{imgUser: $imgUser, nameUser: $nameUser, imgPost: $imgPost, likes: $getLikes}';
+    return 'Post{imgUser: $imgUser, nameUser: $nameUser, imgPost: $imgPost, likes: $likes}';
   }
 
   Post({
