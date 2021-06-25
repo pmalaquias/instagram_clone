@@ -1,12 +1,15 @@
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/PostCard.dart';
+import 'package:instagram_clone/web/home_web.dart';
 import 'package:instagram_clone/home.dart';
-import 'package:instagram_clone/dashboard.dart';
-import 'package:instagram_clone/share_post.dart';
-import 'package:instagram_clone/test.dart';
 
 void main() {
-  runApp(Insta());
+  if (defaultTargetPlatform == TargetPlatform.android) {
+    runApp(Insta());
+  } else {
+    runApp(InstaWeb());
+  }
 }
 
 class Insta extends StatelessWidget {
@@ -25,4 +28,19 @@ class Insta extends StatelessWidget {
   }
 }
 
+class InstaWeb extends StatelessWidget {
+  const InstaWeb({Key key}) : super(key: key);
 
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Instagram',
+      theme: ThemeData(
+        primaryColor: Colors.grey,
+        primarySwatch: Colors.grey,
+      ),
+      home: HomeWeb(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}

@@ -73,10 +73,12 @@ class _PostCardState extends State<PostCard> {
                 },
                 child: Container(
                   
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.network(
-                      widget.post.getImgPost,
+                  child: Center(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.network(
+                        widget.post.getImgPost,
+                      ),
                     ),
                   ),
                 ),
